@@ -13,7 +13,7 @@ export const Head: HeadFC = () => (
   <>
     <title>ТОВ "Гросбух ГмбХ"</title>
     <meta name="description" content={DEFAULT_DESCRIPTION} />
-    <meta name="description" content={DEFAULT_AUTHOR} />
+    <meta name="author" content={DEFAULT_AUTHOR} />
     <meta
       name="google-site-verification"
       content={process.env.GOOGLE_META_API}
