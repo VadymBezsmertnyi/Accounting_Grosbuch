@@ -1,14 +1,14 @@
-import type { GatsbyConfig } from "gatsby"
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `ТОВ "Гросбух ГмбХ"`,
+    description: `Компанія ТОВ «Гросбух ГмбХ», надає широкий спектр послуг з ведення бухгалтерського обліку підприємств. До кожного клієнта у нас індивідуальний підхід та гарантована якість обслуговування саме з тих видів послуг, які необхідні для ведення Вашої діяльності. Ми гарантуємо надання професійних бухгалтерських функцій, а також повну конфіденційність інформації.`,
+    author: `@VadymBezsmertnyi`,
+    siteUrl: `https://www.grosbukh.com.ua/`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [],
-}
+};
 
-export default config
+export default config;
