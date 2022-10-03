@@ -1,4 +1,4 @@
-import { headerImg } from 'images';
+import { headerImg } from '../../images';
 
 export const classes = {
   headerContainer: {
