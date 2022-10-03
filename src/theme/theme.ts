@@ -2,19 +2,14 @@ import { createTheme, Theme } from '@mui/material/styles';
 
 type TCustomColors = {
   main: {
-    blueberry: string;
-    rajah: string;
-    floralWhite: string;
+    borderColor: string;
+    coolGrey: string;
   };
-  font: {
-    error: string;
-  };
+  font: {};
   background: {};
   accent: {};
   colors: {};
-  other: {
-    tuftsBlue: string;
-  };
+  other: {};
 };
 declare module '@mui/material/styles' {
   interface PaletteOptions {
@@ -29,31 +24,44 @@ declare module '@mui/styles/defaultTheme' {
 }
 
 export enum AppColor {
-  BackgroundBlueberry = '#5B8CFF',
-  BackgroundRajah = '#FFA25B',
-  BackgroundFloralWhite = '#fffaf1',
-  FontError = '#ff0000',
-  ButtonTuftsBlue = '#459DE9',
+  BackgroundRaisinBlack = '#231C26',
+  BackgroundRaisinBlack70 = '#231C26B2',
+  CheckboxCoolGrey = '#9097AC',
+  BorderDesertSand = '#EBC6A4',
+  BorderTumbleweed = '#D4AA83',
+  BorderDeer = '#B4885E',
 }
 
 export const createAppTheme = () => {
+  const styles = createTheme();
   const theme = createTheme({
+    components: {
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            color: styles.palette.common.white,
+          },
+        },
+      },
+      MuiCssBaseline: {
+        styleOverrides: {
+          body: {
+            background: AppColor.BackgroundRaisinBlack,
+          },
+        },
+      },
+    },
     palette: {
       custom: {
         main: {
-          blueberry: AppColor.BackgroundBlueberry,
-          rajah: AppColor.BackgroundRajah,
-          floralWhite: AppColor.BackgroundFloralWhite,
+          borderColor: `linear-gradient(180deg, ${AppColor.BorderDesertSand} 11.22%, ${AppColor.BorderTumbleweed} 53.39%, ${AppColor.BorderDeer} 82.44%)`,
+          coolGrey: AppColor.CheckboxCoolGrey,
         },
-        font: {
-          error: AppColor.FontError,
-        },
+        font: {},
         background: {},
         colors: {},
         accent: {},
-        other: {
-          tuftsBlue: AppColor.ButtonTuftsBlue,
-        },
+        other: {},
       },
     },
   });

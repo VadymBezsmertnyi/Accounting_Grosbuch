@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 import { createAppTheme } from '../../theme/theme';
+import { Header } from '../';
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ const Layout = ({ children }: ILayoutProps) => {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          header
+          <Header />
         </Box>
         <Box component={'main'}>{children}</Box>
         <Box
