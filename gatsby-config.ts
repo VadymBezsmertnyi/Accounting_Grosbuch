@@ -1,4 +1,9 @@
 import type { GatsbyConfig } from 'gatsby';
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+console.log(process.env);
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -8,7 +13,15 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.grosbukh.com.ua/`,
   },
   graphqlTypegen: true,
-  plugins: [],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        start_url: `/`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+  ],
 };
 
 export default config;

@@ -20,7 +20,9 @@
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.7",
     "@mui/styles": "^5.10.7",
+    "dotenv": "^16.0.3",
     "gatsby": "^4.24.0",
+    "gatsby-plugin-manifest": "^4.24.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0"
