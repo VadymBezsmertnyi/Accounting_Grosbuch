@@ -1,4 +1,5 @@
 import { createTheme, Theme } from '@mui/material/styles';
+import { Lora, Nunito } from '../fonts';
 
 type TCustomColors = {
   main: {
@@ -35,6 +36,9 @@ export enum AppColor {
 export const createAppTheme = () => {
   const styles = createTheme();
   const theme = createTheme({
+    typography: {
+      fontFamily: 'Lora',
+    },
     components: {
       MuiTypography: {
         styleOverrides: {
@@ -48,6 +52,22 @@ export const createAppTheme = () => {
           body: {
             background: AppColor.BackgroundRaisinBlack,
           },
+          '@font-face': [
+            {
+              fontFamily: 'Lora',
+              fontStyle: 'normal',
+              fontDisplay: 'swap',
+              fontWeight: 300,
+              src: `url(${Lora}) format('truetype')`,
+            },
+            {
+              fontFamily: 'Nunito',
+              fontStyle: 'normal',
+              fontDisplay: 'swap',
+              fontWeight: 300,
+              src: `url(${Nunito}) format('truetype')`,
+            },
+          ],
         },
       },
     },
