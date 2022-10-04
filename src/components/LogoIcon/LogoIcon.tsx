@@ -1,15 +1,19 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-import { logoTitleIcon } from '../../images';
+import { LogoTitleIcon } from '../../images';
 import { NAME_COMPANY } from '../../constants/header';
 
 import { classes } from './LogoIcon.styles';
 
+import { createAppTheme } from '../../theme/theme';
+const theme = createAppTheme();
+
 const LogoIcon = () => {
+  console.log(theme.palette.custom?.main.borderColor)
   return (
     <Box sx={classes.logoContainer}>
-      <Box component={'img'} src={logoTitleIcon} sx={classes.logoImg} />
+      <LogoTitleIcon {...classes.logoImg} />
       <Typography sx={classes.titleImg}>{NAME_COMPANY}</Typography>
     </Box>
   );
