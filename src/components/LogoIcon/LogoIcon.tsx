@@ -7,10 +7,8 @@ import { NAME_COMPANY } from '../../constants/header';
 import { classes } from './LogoIcon.styles';
 
 import { createAppTheme } from '../../theme/theme';
-const theme = createAppTheme();
 
 const LogoIcon = () => {
-  console.log(theme.palette.custom?.main.borderColor)
   return (
     <Box sx={classes.logoContainer}>
       <LogoTitleIcon {...classes.logoImg} />

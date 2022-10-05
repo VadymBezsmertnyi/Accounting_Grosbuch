@@ -1,5 +1,4 @@
 import { createAppTheme } from '../../theme/theme';
-const theme = createAppTheme();
 
 export const classes = {
   logoContainer: {
@@ -17,7 +16,6 @@ export const classes = {
     fontWeight: 700,
     fontSize: '16px',
     lineHeight: '22px',
-    background: theme.palette.custom?.main.borderColor,
     '-webkit-background-clip': 'text',
     '-webkit-text-fill-color': 'transparent',
   },
