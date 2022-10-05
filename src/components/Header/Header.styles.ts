@@ -12,6 +12,7 @@ export const classes = {
   headerContainer: {
     display: 'flex',
     justifyContent: 'space-between',
+    padding: '0 20px',
   },
   headerRight: {
     display: 'flex',
