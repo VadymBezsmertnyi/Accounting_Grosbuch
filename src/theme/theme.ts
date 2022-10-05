@@ -42,35 +42,47 @@ export const createAppTheme = () => {
     typography: {
       fontFamily: 'Lora',
     },
+
     components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          fallbacks: [
+            {
+              '@font-face': {
+                fontFamily: 'Nunito',
+                src: `url(${Nunito}) format('truetype')`,
+              },
+            },
+            {
+              '@font-face': {
+                fontFamily: 'Lora',
+                src: `url(${Lora}) format('truetype')`,
+              },
+            },
+          ],
+          body: {
+            background: AppColor.BackgroundRaisinBlack,
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            color: styles.palette.common.white,
+            textTransform: 'none',
+            fontFamily: 'Nunito',
+            fontStyle: 'normal',
+            fontWeight: 700,
+            fontSize: '20px',
+            lineHeight: '27px',
+          },
+        },
+      },
       MuiTypography: {
         styleOverrides: {
           root: {
             color: styles.palette.common.white,
           },
-        },
-      },
-      MuiCssBaseline: {
-        styleOverrides: {
-          body: {
-            background: AppColor.BackgroundRaisinBlack,
-          },
-          '@font-face': [
-            {
-              fontFamily: 'Lora',
-              fontStyle: 'normal',
-              fontDisplay: 'swap',
-              fontWeight: 300,
-              src: `url(${Lora}) format('truetype')`,
-            },
-            {
-              fontFamily: 'Nunito',
-              fontStyle: 'normal',
-              fontDisplay: 'swap',
-              fontWeight: 300,
-              src: `url(${Nunito}) format('truetype')`,
-            },
-          ],
         },
       },
     },

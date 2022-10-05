@@ -1,1 +1,1 @@
-export { default as Lora } from './Lora-VariableFont_wght.ttf';
+export { default as Lora } from './Lora-Medium.ttf';

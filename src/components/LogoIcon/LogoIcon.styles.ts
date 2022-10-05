@@ -8,11 +8,8 @@ export const classes = {
     alignItems: 'center',
   },
   logoImg: {
-    width: '90px',
-    height: '70px',
-    background: theme.palette.custom?.main.borderColor,
-    '-webkit-background-clip': 'text',
-    '-webkit-text-fill-color': 'transparent',
+    width: '67px',
+    height: '52px',
   },
   titleImg: {
     fontFamily: 'Nunito',
