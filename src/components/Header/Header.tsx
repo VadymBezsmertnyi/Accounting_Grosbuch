@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { LogoIcon, NavigateMenu } from '../';
+import { LogoIcon, NavigateMenu, SocialButtons } from '../';
 
 import { classes } from './Header.styles';
 
@@ -10,6 +10,7 @@ const Header = () => {
       <LogoIcon />
       <Box sx={classes.headerRight}>
         <NavigateMenu />
+        <SocialButtons />
       </Box>
     </Box>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Box, Button } from '@mui/material';
 
 import { LIST_NAVIGATE_MENU } from '../../constants/header';
@@ -9,13 +10,9 @@ const NavigateMenu = () => {
   return (
     <Box sx={classes.navigateMenu}>
       {LIST_NAVIGATE_MENU.map((menu) => (
-        <Button
-          onClick={() => console.log(menu.href)}
-          key={`navigate_menu_${menu.id}`}
-          sx={classes.menuButton}
-        >
+        <Link style={classes.menuButton} to={menu.href}>
           {menu.title}
-        </Button>
+        </Link>
       ))}
     </Box>
   );

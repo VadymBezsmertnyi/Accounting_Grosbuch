@@ -2,18 +2,17 @@ import { createAppTheme } from '../../theme/theme';
 const theme = createAppTheme();
 
 export const classes = {
-  navigateMenu: {
+  socialButtonsContainer: {
     display: 'flex',
     alignItems: 'center',
+    padding: '0 60px',
   },
-  menuButton: {
+  linkSocial: {
+    display: 'flex',
+    margin: '0 5px',
+  },
+  logoSocial: {
+    width: '26px',
     color: theme.palette.common.white,
-    textDecoration: 'auto',
-    fontFamily: 'Nunito',
-    fontStyle: 'normal',
-    fontWeight: 700,
-    fontSize: '20px',
-    lineHeight: '27px',
-    padding: '0 15px',
   },
 };

@@ -5,7 +5,7 @@ export const classes = {
     display: 'flex',
     justifyContent: 'space-between',
     padding: '0 10.94vw',
-    backgroundImage: `url(${headerImg})`,
+    background: `url(${headerImg}) center center/cover no-repeat`,
   },
   headerRight: {
     display: 'flex',
