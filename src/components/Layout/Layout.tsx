@@ -16,23 +16,14 @@ const Layout = ({ children }: ILayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
-        <Box
-          component={'header'}
-          style={{
-            backgroundPosition: 'center top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
+        <Box component={'header'}>
           <Header />
         </Box>
         <Box component={'main'}>{children}</Box>
         <Box
           component={'footer'}
-          style={{
-            background: '#00000014',
+          sx={{
             margin: '50px 0 0 0',
-            backgroundPosition: 'center bottom',
-            backgroundRepeat: 'no-repeat',
           }}
         >
           footer

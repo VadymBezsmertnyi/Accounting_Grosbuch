@@ -34,10 +34,10 @@ export enum AppColor {
   BorderDesertSand = '#EBC6A4',
   BorderTumbleweed = '#D4AA83',
   BorderDeer = '#B4885E',
+  White = '#fff',
 }
 
 export const createAppTheme = () => {
-  const styles = createTheme();
   const theme = createTheme({
     typography: {
       fontFamily: 'Lora',
@@ -68,7 +68,7 @@ export const createAppTheme = () => {
       MuiButton: {
         styleOverrides: {
           root: {
-            color: styles.palette.common.white,
+            color: AppColor.White,
             textTransform: 'none',
             fontFamily: 'Nunito',
             fontStyle: 'normal',
@@ -81,7 +81,7 @@ export const createAppTheme = () => {
       MuiTypography: {
         styleOverrides: {
           root: {
-            color: styles.palette.common.white,
+            color: AppColor.White,
           },
         },
       },
