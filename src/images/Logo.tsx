@@ -1,4 +1,6 @@
 import React from 'react';
+import { createAppTheme } from '../theme/theme';
+const theme = createAppTheme();
 interface ILogoSvgProps {
   color?: string;
   width?: string;
@@ -18,8 +20,26 @@ const LogoSvg = ({
     viewBox="0 0 1240.000000 979.000000"
     preserveAspectRatio="xMidYMid meet"
   >
+    <linearGradient
+      id="linear"
+      gradientTransform="rotate(180)"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop
+        style={{ stopColor: theme.palette.custom?.main.borderDesertSand }}
+        offset="11.22%"
+      />
+      <stop
+        style={{ stopColor: theme.palette.custom?.main.borderTumbleweed }}
+        offset="53.39%"
+      />
+      <stop
+        style={{ stopColor: theme.palette.custom?.main.borderDeer }}
+        offset="82.44%"
+      />
+    </linearGradient>
     <g
-      fill={color}
+      fill="url(#linear)"
       transform="translate(0.000000,979.000000) scale(0.100000,-0.100000)"
       stroke="none"
     >

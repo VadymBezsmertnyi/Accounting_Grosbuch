@@ -4,6 +4,9 @@ import { Lora, Nunito } from '../fonts';
 type TCustomColors = {
   main: {
     borderColor: string;
+    borderDesertSand: string;
+    borderTumbleweed: string;
+    borderDeer: string;
     coolGrey: string;
   };
   font: {};
@@ -75,6 +78,9 @@ export const createAppTheme = () => {
       custom: {
         main: {
           borderColor: `linear-gradient(180deg, ${AppColor.BorderDesertSand} 11.22%, ${AppColor.BorderTumbleweed} 53.39%, ${AppColor.BorderDeer} 82.44%)`,
+          borderDesertSand: AppColor.BorderDesertSand,
+          borderTumbleweed: AppColor.BorderTumbleweed,
+          borderDeer: AppColor.BorderDeer,
           coolGrey: AppColor.CheckboxCoolGrey,
         },
         font: {},

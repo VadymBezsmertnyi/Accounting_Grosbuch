@@ -8,11 +8,20 @@ export const classes = {
     alignItems: 'center',
   },
   logoImg: {
-    width: '83px',
-    color: theme.palette.custom?.main.borderColor,
+    width: '90px',
+    height: '70px',
+    background: theme.palette.custom?.main.borderColor,
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
   },
   titleImg: {
     fontFamily: 'Nunito',
-    color: theme.palette.custom?.main.borderColor,
+    fontStyle: 'normal',
+    fontWeight: 700,
+    fontSize: '16px',
+    lineHeight: '22px',
+    background: theme.palette.custom?.main.borderColor,
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent',
   },
 };
