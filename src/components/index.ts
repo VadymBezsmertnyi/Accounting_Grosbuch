@@ -6,3 +6,4 @@ export { default as Header } from './Header';
 export { default as LogoIcon } from './LogoIcon';
 export { default as NavigateMenu } from './NavigateMenu';
 export { default as SocialButtons } from './SocialButtons';
+export { default as Contacts } from './Contacts';
