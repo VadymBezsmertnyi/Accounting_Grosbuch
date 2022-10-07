@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import clsx from 'clsx';
 import { Box, Typography } from '@mui/material';
+import {
+  HowToReg as HowToRegIcon,
+  VerifiedUser as VerifiedUserIcon,
+  LibraryAddCheck as LibraryAddCheckIcon,
+} from '@mui/icons-material';
+
 import {
   OTHER_TITLE_INFO_HEADER_FIRST,
   OTHER_TITLE_INFO_HEADER_SECOND,
@@ -39,12 +44,37 @@ const InfoHeader = () => {
             ...classes.containerLink,
             ...(hover ? classes.containerLinkHover : classes.containerLink),
           }}
-          to={'#contact'}
+          to={'#feedback'}
         >
           Залишити заявку
         </Link>
       </Box>
-      <Box sx={classes.containers}></Box>
+      <Box sx={classes.otherHeader}>
+        <Box
+          sx={{
+            ...classes.containerOtherHeader,
+            ...classes.containerOne,
+            left: '2px',
+          }}
+        >
+          <HowToRegIcon sx={{ width: '38px', height: '38px' }} />
+          <Typography>Індивідуальний підхід</Typography>
+        </Box>
+        <Box sx={{ ...classes.containerOtherHeader, ...classes.containerTwo }}>
+          <VerifiedUserIcon sx={{ width: '38px', height: '38px' }} />
+          <Typography>Конфіденційність інформації </Typography>
+        </Box>
+        <Box
+          sx={{
+            ...classes.containerOtherHeader,
+            ...classes.containerOne,
+            right: '2px',
+          }}
+        >
+          <LibraryAddCheckIcon sx={{ width: '38px', height: '38px' }} />
+          <Typography>Якість обслуговування</Typography>
+        </Box>
+      </Box>
     </Box>
   );
 };

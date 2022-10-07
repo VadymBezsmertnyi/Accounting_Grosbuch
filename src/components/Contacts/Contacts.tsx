@@ -29,10 +29,15 @@ const Contacts = ({ type = 'header' }) => {
   };
   return (
     <Box sx={classes.contacts}>
-      {LIST_CONTACTS.map((contact) => {
+      {LIST_CONTACTS.map((contact, i) => {
         return (
           contact.typeShow === type && (
-            <Link target="_blank" to={contact.href} style={classes.link}>
+            <Link
+              key={`link_${i}`}
+              target="_blank"
+              to={contact.href}
+              style={classes.link}
+            >
               {addIcon(contact.icon)}
               {contact.title}
             </Link>

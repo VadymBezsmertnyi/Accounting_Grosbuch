@@ -47,11 +47,31 @@ export const classes = {
   containerLinkHover: {
     color: theme.palette.common.white,
   },
-  containers: {
+  otherHeader: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
     width: '100%',
-    height: '300px',
-    position: 'relative',
-    top: '80px',
+    height: '220px',
     background: theme.palette.custom?.main.backgroundRaisinBlack70,
+  },
+  containerOtherHeader: {
+    color: theme.palette.common.white,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '10px',
+    padding: '35px 25px',
+
+    border: `2px solid ${theme.palette.custom?.main.borderTumbleweed}`,
+  },
+  containerOne: {
+    position: 'relative',
+    borderImage: `linear-gradient(to bottom, #00000000 50%,${theme.palette.custom?.main.borderDesertSand} 0%,${theme.palette.custom?.main.borderTumbleweed} 100%,${theme.palette.custom?.main.borderTumbleweed} 55%)`,
+    borderImageSlice: 1,
+  },
+  containerTwo: {
+    borderImage: `linear-gradient(to bottom, ${theme.palette.custom?.main.borderDesertSand} 0%,${theme.palette.custom?.main.borderDesertSand} 0%,${theme.palette.custom?.main.borderDesertSand} 50%,#00000000 50%)`,
+    borderImageSlice: 1,
   },
 };
