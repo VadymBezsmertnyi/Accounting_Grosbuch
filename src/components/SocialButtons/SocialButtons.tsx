@@ -11,10 +11,18 @@ import { classes } from './SocialButtons.styles';
 const SocialButtons = () => {
   return (
     <Box sx={classes.socialButtonsContainer}>
-      <Link style={classes.linkSocial} to="https://www.facebook.com/">
+      <Link
+        target={'_blank'}
+        style={classes.linkSocial}
+        to="https://www.facebook.com/"
+      >
         <FacebookIcon sx={classes.logoSocial} />
       </Link>
-      <Link style={classes.linkSocial} to="https://www.linkedin.com/">
+      <Link
+        target={'_blank'}
+        style={classes.linkSocial}
+        to="https://www.linkedin.com/"
+      >
         <LinkedInIcon sx={classes.logoSocial} />
       </Link>
     </Box>
