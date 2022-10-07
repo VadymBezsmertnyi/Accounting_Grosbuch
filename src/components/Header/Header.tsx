@@ -1,6 +1,12 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { LogoIcon, NavigateMenu, SocialButtons, Contacts } from '../';
+import {
+  LogoIcon,
+  NavigateMenu,
+  SocialButtons,
+  Contacts,
+  InfoHeader,
+} from '../';
 
 import { classes } from './Header.styles';
 
@@ -16,6 +22,7 @@ const Header = () => {
         </Box>
       </Box>
       <Box sx={classes.line} />
+      <InfoHeader />
     </Box>
   );
 };

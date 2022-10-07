@@ -12,7 +12,9 @@ const LogoIcon = () => {
   return (
     <Box sx={classes.logoContainer}>
       <LogoTitleIcon {...classes.logoImg} />
-      <Typography sx={classes.titleImg}>{NAME_COMPANY}</Typography>
+      <Typography variant="h2" sx={classes.titleImg}>
+        {NAME_COMPANY}
+      </Typography>
     </Box>
   );
 };

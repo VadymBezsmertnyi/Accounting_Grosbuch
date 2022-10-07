@@ -7,3 +7,5 @@ export { default as LogoIcon } from './LogoIcon';
 export { default as NavigateMenu } from './NavigateMenu';
 export { default as SocialButtons } from './SocialButtons';
 export { default as Contacts } from './Contacts';
+
+export { default as InfoHeader } from './InfoHeader';

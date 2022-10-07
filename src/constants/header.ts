@@ -1,13 +1,15 @@
-export const NAME_COMPANY = `ТОВ «Гросбух ГмбХ»`;
+import { TContact, TNavigateMenu } from '../types/header';
 
-export const LIST_NAVIGATE_MENU = [
+export const NAME_COMPANY: string = `ТОВ «Гросбух ГмбХ»`;
+
+export const LIST_NAVIGATE_MENU: TNavigateMenu[] = [
   { id: 1, title: 'Про компанію', href: '#aboutUs' },
   { id: 2, title: 'Послуги', href: '#services' },
   { id: 3, title: 'Контакти', href: '#contact' },
   { id: 4, title: 'Зв’язок', href: '#feedback' },
 ];
 
-export const LIST_CONTACTS = [
+export const LIST_CONTACTS: TContact[] = [
   {
     id: 1,
     icon: 'location',
@@ -44,3 +46,11 @@ export const LIST_CONTACTS = [
     href: 'https://goo.gl/maps/nJNowR5HEJQqUrCFA',
   },
 ];
+
+export const TITLE_INFO_HEADER: string = 'Компанія ТОВ «Гросбух ГмбХ»';
+
+export const OTHER_TITLE_INFO_HEADER_FIRST: string =
+  'Різноманітний асортимент послуг';
+
+export const OTHER_TITLE_INFO_HEADER_SECOND: string =
+  'з ведення бухгалтерського обліку';

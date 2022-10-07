@@ -3,6 +3,8 @@ import { Lora, Nunito } from '../fonts';
 
 type TCustomColors = {
   main: {
+    backgroundRaisinBlack: string;
+    backgroundRaisinBlack70: string;
     borderColor: string;
     borderDesertSand: string;
     borderTumbleweed: string;
@@ -89,6 +91,8 @@ export const createAppTheme = () => {
     palette: {
       custom: {
         main: {
+          backgroundRaisinBlack: AppColor.BackgroundRaisinBlack,
+          backgroundRaisinBlack70: AppColor.BackgroundRaisinBlack70,
           borderColor: `linear-gradient(180deg, ${AppColor.BorderDesertSand} 11.22%, ${AppColor.BorderTumbleweed} 53.39%, ${AppColor.BorderDeer} 82.44%)`,
           borderDesertSand: AppColor.BorderDesertSand,
           borderTumbleweed: AppColor.BorderTumbleweed,
