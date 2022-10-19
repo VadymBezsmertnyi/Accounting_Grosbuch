@@ -1,9 +1,8 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { classes } from './ItemBody.styles';
 import { TDefaultDate } from '../../types/body';
-import clsx from 'clsx';
 
 interface IItemBodyProps {
   options: TDefaultDate;
@@ -12,7 +11,9 @@ interface IItemBodyProps {
 
 const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
   return (
-    <Box sx={classes.itemList(lastElement, options.imgMain)}>TEST BODY</Box>
+    <Box sx={classes.itemList(lastElement, options.imgMain)}>
+      <Typography>TEST BODY</Typography>
+    </Box>
   );
 };
 

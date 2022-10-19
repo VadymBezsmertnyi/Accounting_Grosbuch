@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
@@ -26,7 +26,7 @@ const Layout = ({ children }: ILayoutProps) => {
             margin: '50px 0 0 0',
           }}
         >
-          footer
+          <Typography>TEST FOOTER</Typography>
         </Box>
       </CssBaseline>
     </ThemeProvider>

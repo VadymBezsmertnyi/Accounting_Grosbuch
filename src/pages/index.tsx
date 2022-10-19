@@ -7,9 +7,7 @@ import { Typography } from '@mui/material';
 const IndexPage = () => {
   return (
     <Layout>
-      <Typography>
-        <BodySite />
-      </Typography>
+      <BodySite />
     </Layout>
   );
 };

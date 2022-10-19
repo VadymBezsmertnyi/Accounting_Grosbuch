@@ -10,7 +10,11 @@ const NavigateMenu = () => {
   return (
     <Box sx={classes.navigateMenu}>
       {LIST_NAVIGATE_MENU.map((menu) => (
-        <Link style={classes.menuButton} to={menu.href}>
+        <Link
+          key={`element_menu_${menu.id}`}
+          style={classes.menuButton}
+          to={menu.href}
+        >
           {menu.title}
         </Link>
       ))}
