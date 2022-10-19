@@ -1,4 +1,4 @@
-import { fopBodyList, legalBodyList } from '../images';
+import { femaleIcon, fopBodyList, legalBodyList, maleIcon } from '../images';
 import { TDefaultDate } from '../types/body';
 
 export const BODY_DEFAULT_DATE: TDefaultDate[] = [
@@ -9,12 +9,12 @@ export const BODY_DEFAULT_DATE: TDefaultDate[] = [
     listDate: [
       {
         id: 1,
-        imgLogo: '',
+        imgLogo: femaleIcon,
         text: `Бухгалтерський супровід — одна з найважливіших складових бізнесу, який необхідний для надання інформації про фінансове становище, результати діяльності та рух грошових коштів підприємства`,
       },
       {
         id: 2,
-        imgLogo: '',
+        imgLogo: maleIcon,
         text: `Наша компанія має високий рівень якості професійних умінь та тавичок і пропонує клієнтам послуг відповідно до обраної системи оподаткування`,
       },
     ],
