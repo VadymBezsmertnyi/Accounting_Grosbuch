@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Box, Typography } from '@mui/material';
 
 import { TDefaultDate } from '../../types/body';
-import { femaleIcon, maleIcon } from '../../images';
 
 import { classes } from './ItemBody.styles';
 
@@ -19,7 +18,7 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
           {options.listDate?.map((option, i) => {
             const position = (i + 1) % 2 === 0 ? 'right' : 'left';
             return (
-              <>
+              <Fragment key={`element_body_${options.type}_${option.id}`}>
                 <Box sx={classes.rightOtherItem(position)}>
                   {position === 'right' && <Box sx={classes.lineOtherItem} />}
                   <Box
@@ -34,7 +33,7 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
                     {option.text}
                   </Typography>
                 </Box>
-              </>
+              </Fragment>
             );
           })}
         </Box>
