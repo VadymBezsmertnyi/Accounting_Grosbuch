@@ -62,9 +62,10 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
                             <OutputIcon />
                             {other.title}
                           </Typography>
-                          {other.otherTitle.map((textTitleOther) => {
+                          {other.otherTitle.map((textTitleOther, i) => {
                             return (
                               <Typography
+                                key={`text_title_other_${i + 1}`}
                                 sx={{
                                   ...classes.textListItem,
                                   padding: '5px 0 0 25px',
@@ -82,14 +83,19 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
                         <Typography sx={classes.secondTitle}>
                           {option.secondTitle.title}
                         </Typography>
-                        {option.secondTitle.otherTitle.map((textOtherTitle) => {
-                          return (
-                            <Typography sx={classes.textListItem}>
-                              <OutputIcon />
-                              {textOtherTitle}
-                            </Typography>
-                          );
-                        })}
+                        {option.secondTitle.otherTitle.map(
+                          (textOtherTitle, i) => {
+                            return (
+                              <Typography
+                                key={`text_other_title_${i + 1}`}
+                                sx={classes.textListItem}
+                              >
+                                <OutputIcon />
+                                {textOtherTitle}
+                              </Typography>
+                            );
+                          }
+                        )}
                       </Fragment>
                     )}
                   </Box>
