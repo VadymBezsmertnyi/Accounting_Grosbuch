@@ -1,13 +1,15 @@
 import * as React from 'react';
 import type { HeadFC } from 'gatsby';
-import { Layout } from '../components';
+import { BodySite, Layout } from '../components';
 import { DEFAULT_AUTHOR, DEFAULT_DESCRIPTION } from '../constants/head';
 import { Typography } from '@mui/material';
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Typography>TEST LOYAUT</Typography>
+      <Typography>
+        <BodySite />
+      </Typography>
     </Layout>
   );
 };
