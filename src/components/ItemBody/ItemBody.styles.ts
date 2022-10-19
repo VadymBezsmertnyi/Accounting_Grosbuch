@@ -9,9 +9,9 @@ export const classes = {
     type: 'other' | 'list'
   ) => ({
     background: `url(${imgElement}) center center/cover no-repeat`,
-    margin: '200px 0 0 0',
+    marginTop: type === 'list' ? '20px' : '100px',
     width: '100%',
-    height: '500px',
+    minHeight: '500px',
     clipPath:
       type === 'list'
         ? `polygon(0 0, 50% 15%, 100% 0, 100% ${
@@ -26,7 +26,7 @@ export const classes = {
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  rightOtherItem: (positionElement: 'left' | 'right') => ({
+  elementOtherItem: (positionElement: 'left' | 'right') => ({
     width: '100%',
     height: '20%',
     display: 'flex',
@@ -54,6 +54,47 @@ export const classes = {
   }),
   textOtherItem: {
     width: '50%',
-    padding: '0 8vw',
+    padding: '3vh 8vw',
   },
+
+  listItem: {
+    margin: '150px 0 130px 0',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  titleListItem: {
+    fontSize: '40px',
+    margin: '0 0 150px 0',
+  },
+  elementsListItem: {
+    display: 'flex',
+    gap: '12px',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
+  elementListItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    maxWidth: '380px',
+    background: theme.palette.custom?.main.backgroundRaisinBlack70 || '',
+    borderRadius: '25px',
+    padding: '2px',
+  },
+  titleElementListItem: {
+    background: theme.palette.custom?.main.backgroundRaisinBlack || '',
+    borderRadius: '25px',
+    padding: '16px 46px',
+    position: 'relative',
+    bottom: '14%',
+  },
+  textListItem: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    position: 'relative',
+    bottom: '10%',
+    paddingTop: '5px',
+  },
+  secondTitle: { textAlign: 'center', padding: '0 0 50px 0', fontSize: '20px' },
 };
