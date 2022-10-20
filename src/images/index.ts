@@ -6,3 +6,4 @@ export { default as fopBodyList } from './fopBodyList.png';
 
 export { default as maleIcon } from './maleIcon.png';
 export { default as femaleIcon } from './femaleIcon.png';
+export { default as tempFrame } from './tempFrame.png';
