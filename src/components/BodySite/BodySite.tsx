@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 import { BODY_DEFAULT_DATE } from '../../constants/body';
-import ItemBody from '../ItemBody';
+import { ItemBody, Feedback } from '../';
 
 import { classes } from './BodySite.styles';
 
@@ -19,6 +19,7 @@ const BodySite = () => {
           />
         );
       })}
+      <Feedback />
     </Box>
   );
 };
