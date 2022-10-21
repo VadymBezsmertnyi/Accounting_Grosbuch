@@ -3,6 +3,7 @@ export { default as Seo } from './Seo';
 
 export { default as Header } from './Header';
 export { default as InfoHeader } from './InfoHeader';
+export { default as CustomButton } from './CustomButton';
 
 export { default as LogoIcon } from './LogoIcon';
 export { default as NavigateMenu } from './NavigateMenu';
