@@ -2,6 +2,7 @@ export type TFeedback = {
   name: string;
   phone: string;
   email: string;
+  recaptcha: boolean;
   activity: string[];
   taxationSystem: string[];
   ownership: string[];
@@ -12,6 +13,7 @@ export type TErrorsFeedback = {
   phone?: string;
   email?: string;
   activity?: string;
+  recaptcha?: string;
   taxationSystem?: string;
   ownership?: string;
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import ReCAPTCHA from 'react-google-recaptcha';
 import {
   Box,
-  Button,
   Checkbox,
   FormControlLabel,
   TextField,
@@ -10,16 +10,17 @@ import {
 } from '@mui/material';
 import { MuiTelInput } from 'mui-tel-input';
 
+import CustomButton from '../CustomButton';
+import { DEFAULT_FEEDBACK_CHECKBOXES } from '../../constants/feedback';
 import { TErrorsFeedback, TFeedback } from '../../types/feedback';
 
 import { classes } from './Feedback.styles';
-import { DEFAULT_FEEDBACK_CHECKBOXES } from '../../constants/feedback';
-import { tempFrame } from '../../images';
 
 const initialValues: TFeedback = {
   name: '',
   phone: '',
   email: '',
+  recaptcha: false,
   activity: [],
   taxationSystem: [],
   ownership: [],
@@ -38,8 +39,15 @@ const Feedback = () => {
       console.log(values);
     },
   });
+
   const { handleSubmit, handleChange, values, errors, isValid } = formik;
-  console.log(values);
+
+  const recaptchaSubmit = (result: string) => {
+    const resultFormik = {
+      target: { name: 'recaptcha', value: Boolean(result) },
+    };
+    handleChange(resultFormik);
+  };
 
   return (
     <Box component={'form'} sx={classes.feedback}>
@@ -76,8 +84,14 @@ const Feedback = () => {
           placeholder={`Ваш email`}
           InputProps={{ style: classes.inputPhone }}
         />
-        <Box component={'img'} src={tempFrame} />
-        <Button>TEST BUTTON</Button>
+        <ReCAPTCHA
+          name="recaptcha"
+          style={{ display: 'inline-block' }}
+          sitekey={process.env.KEY_GOOGLE_RECAPTCHA}
+          onChange={recaptchaSubmit}
+          hl="en"
+        />
+        <CustomButton type="other" />
         <Typography>
           Ваші дані у повній безпеці і не будуть нікому передані
         </Typography>
@@ -97,6 +111,7 @@ const Feedback = () => {
                       onChange={handleChange}
                       name="activity"
                       value={checkbox}
+                      sx={classes.checkboxInput}
                     />
                   }
                   label={checkbox}
@@ -123,6 +138,7 @@ const Feedback = () => {
                       onChange={handleChange}
                       name="activity"
                       value={checkbox}
+                      sx={classes.checkboxInput}
                     />
                   }
                   label={checkbox}
@@ -146,6 +162,7 @@ const Feedback = () => {
                       onChange={handleChange}
                       name="activity"
                       value={checkbox}
+                      sx={classes.checkboxInput}
                     />
                   }
                   label={checkbox}

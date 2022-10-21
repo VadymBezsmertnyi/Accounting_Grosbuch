@@ -15,8 +15,9 @@ export const classes = {
   formInputs: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
+    gap: '30px',
     width: '472px',
     height: '564px',
     margin: '60px 0',
@@ -52,6 +53,11 @@ export const classes = {
   checkBoxesInputs: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  checkboxInput: {
+    [`&, &.MuiCheckbox-colorPrimary`]: {
+      color: theme.palette.custom?.main.coolGrey,
+    },
   },
   titleCheckBoxesInputs: {
     fontWeight: 600,

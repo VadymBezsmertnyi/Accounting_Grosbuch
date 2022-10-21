@@ -7,6 +7,7 @@ import {
   LibraryAddCheck as LibraryAddCheckIcon,
 } from '@mui/icons-material';
 
+import CustomButton from '../CustomButton';
 import {
   OTHER_TITLE_INFO_HEADER_FIRST,
   OTHER_TITLE_INFO_HEADER_SECOND,
@@ -33,21 +34,7 @@ const InfoHeader = () => {
         <Typography variant="h1" sx={classes.otherTitle}>
           {OTHER_TITLE_INFO_HEADER_SECOND}
         </Typography>
-        <Link
-          onMouseEnter={() => {
-            setHover(true);
-          }}
-          onMouseLeave={() => {
-            setHover(false);
-          }}
-          style={{
-            ...classes.containerLink,
-            ...(hover ? classes.containerLinkHover : classes.containerLink),
-          }}
-          to={'#feedback'}
-        >
-          Залишити заявку
-        </Link>
+        <CustomButton type={'header'} />
       </Box>
       <Box sx={classes.otherHeader}>
         <Box
