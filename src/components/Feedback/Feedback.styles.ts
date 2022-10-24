@@ -17,7 +17,6 @@ export const classes = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '30px',
     width: '472px',
     height: '564px',
     margin: '60px 0',
@@ -37,12 +36,13 @@ export const classes = {
     color: 'white',
     maxHeight: '500px',
   },
+  formHelperText: { textAlign: 'center', height: '30px' },
 
   formCheckbox: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
-    gap: '20px 120px',
+    gap: '0 120px',
     width: '834px',
     height: '564px',
     margin: '60px 0',
@@ -53,15 +53,31 @@ export const classes = {
   checkBoxesInputs: {
     display: 'flex',
     flexDirection: 'column',
+    minWidth: '260px',
   },
-  checkboxInput: {
+  checkboxInput: (error: boolean) => ({
+    color: error
+      ? theme.palette.error.main
+      : theme.palette.custom?.main.coolGrey,
     [`&, &.MuiCheckbox-colorPrimary`]: {
-      color: theme.palette.custom?.main.coolGrey,
+      color: error
+        ? theme.palette.error.main
+        : theme.palette.custom?.main.coolGrey,
     },
-  },
+  }),
   titleCheckBoxesInputs: {
     fontWeight: 600,
     fontSize: '24px',
     lineHeight: '31px',
   },
+
+  otherErrorText: (showError: boolean) => ({
+    opacity: showError ? 1 : 0,
+    color: '#d32f2f',
+    fontSize: '0.75rem',
+    lineHeight: '1.66',
+    marginTop: '3px',
+    height: '30px',
+  }),
+  otherText: {},
 };

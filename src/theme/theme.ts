@@ -10,6 +10,8 @@ type TCustomColors = {
     borderTumbleweed: string;
     borderDeer: string;
     coolGrey: string;
+    backgroundDisabled: string;
+    colorDisabled: string;
   };
   font: {};
   background: {};
@@ -37,6 +39,8 @@ export enum AppColor {
   BorderTumbleweed = '#D4AA83',
   BorderDeer = '#B4885E',
   White = '#fff',
+  BackgroundDisabled = '#adadad66',
+  ColorDisabled = '#ffffff12',
 }
 
 export const createAppTheme = () => {
@@ -98,6 +102,8 @@ export const createAppTheme = () => {
           borderTumbleweed: AppColor.BorderTumbleweed,
           borderDeer: AppColor.BorderDeer,
           coolGrey: AppColor.CheckboxCoolGrey,
+          backgroundDisabled: AppColor.BackgroundDisabled,
+          colorDisabled: AppColor.ColorDisabled,
         },
         font: {},
         background: {},
