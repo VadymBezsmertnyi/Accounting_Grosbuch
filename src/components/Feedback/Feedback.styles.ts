@@ -10,7 +10,7 @@ export const classes = {
     alignItems: 'center',
     justifyContent: 'space-evenly',
     gap: '130px',
-    margin: '200px 0 0 0',
+    margin: '50px 0 0 0',
   },
   formInputs: {
     display: 'flex',
