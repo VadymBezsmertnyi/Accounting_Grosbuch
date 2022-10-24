@@ -35,6 +35,8 @@ export const classes = {
     justifyContent: positionElement === 'left' ? 'flex-end' : 'flex-start',
   }),
   imgOtherItem: (positionElement: 'left' | 'right') => ({
+    width: '100px',
+    height: '100px',
     position: 'relative',
     [positionElement]: '20%',
   }),

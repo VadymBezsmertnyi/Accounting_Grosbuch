@@ -17,6 +17,7 @@ const SocialButtons = ({ type = 'header' }: ISocialButtonsProps) => {
     <Box sx={classes.socialButtonsContainer(type)}>
       <Link
         target={'_blank'}
+        title={`Facebook link`}
         style={classes.linkSocial}
         to="https://www.facebook.com/"
       >
@@ -24,6 +25,7 @@ const SocialButtons = ({ type = 'header' }: ISocialButtonsProps) => {
       </Link>
       <Link
         target={'_blank'}
+        title={`Facebook link`}
         style={classes.linkSocial}
         to="https://www.linkedin.com/"
       >
