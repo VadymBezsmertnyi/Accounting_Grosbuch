@@ -10,15 +10,18 @@ export const classes = {
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  link: {
+  link: (hover?: boolean) => ({
     display: 'flex',
     alignItems: 'center',
-    color: theme.palette.common.white,
+    color: hover
+      ? theme.palette.custom?.main.borderDesertSand
+      : theme.palette.common.white,
     textDecoration: 'auto',
     fontFamily: 'Nunito',
     fontStyle: 'normal',
     lineHeight: '130%',
-  },
+    transition: 'color 0.5s linear',
+  }),
   iconLink: {
     width: '24px',
     marginRight: '5px',

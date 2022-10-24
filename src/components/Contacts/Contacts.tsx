@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 import { classes } from './Contacts.styles';
@@ -15,6 +15,7 @@ interface IContactsProps {
 }
 
 const Contacts = ({ type = 'header' }: IContactsProps) => {
+  const [hover, setHover] = useState<{ [key: string]: boolean }>({});
   const addIcon = (typeContact: 'location' | 'phone' | 'email') => {
     switch (typeContact) {
       case 'location':
@@ -33,10 +34,12 @@ const Contacts = ({ type = 'header' }: IContactsProps) => {
         return (
           contact.typeShow === type && (
             <Link
+              onMouseMove={() => setHover({ [contact.href]: true })}
+              onMouseLeave={() => setHover({ [contact.href]: false })}
               key={`link_${i}`}
               target="_blank"
               to={contact.href}
-              style={classes.link}
+              style={classes.link(hover[contact.href])}
             >
               {addIcon(contact.icon)}
               {contact.title}

@@ -42,7 +42,7 @@ export const classes = {
     position: 'relative',
     display: 'flex',
     width: '60%',
-    bottom: '50%',
+    bottom: '50px',
     height: '1px',
     zIndex: ' -1',
     background: theme.palette.custom?.main.borderColor || '',

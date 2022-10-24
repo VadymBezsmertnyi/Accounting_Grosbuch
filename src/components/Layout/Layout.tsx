@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
 import { Header, Footer } from '../';
+import { logoIcon } from '../../images';
 
 import { createAppTheme } from '../../theme/theme';
 
@@ -17,6 +18,7 @@ const Layout = ({ children }: ILayoutProps) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline>
+        <Box component={'img'} src={logoIcon} sx={{ display: 'none' }} />
         <Box component={'header'}>
           <Header />
         </Box>

@@ -33,7 +33,7 @@ export const classes = {
   },
   listCountryPhone: {
     background: theme.palette.custom?.main.backgroundRaisinBlack,
-    color: 'white',
+    color: theme.palette.common.white,
     maxHeight: '500px',
   },
   formHelperText: { textAlign: 'center', height: '30px' },

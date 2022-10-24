@@ -9,14 +9,15 @@ export const classes = {
     flexDirection: type === 'footer' ? 'column' : '',
     justifyContent: 'space-evenly',
   }),
-  menuButton: {
-    color: theme.palette.common.white,
+  menuButton: (hover?: boolean) => ({
+    color: hover
+      ? theme.palette.custom?.main.borderDesertSand
+      : theme.palette.common.white,
     textDecoration: 'auto',
     fontFamily: 'Nunito',
     fontStyle: 'normal',
-    //fontWeight: 700,
-    //fontSize: '20px',
     lineHeight: '27px',
     padding: '0 15px',
-  },
+    transition: 'color 0.5s linear',
+  }),
 };

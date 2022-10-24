@@ -42,5 +42,10 @@ export const classes = {
     color: theme.palette.custom?.main.coolGrey,
     lineHeight: '130%',
     textDecoration: 'none',
+    transition: 'color 0.5s linear',
+    '&:hover': {
+      color: theme.palette.common.white,
+      transition: 'color 0.5s linear',
+    },
   },
 };
