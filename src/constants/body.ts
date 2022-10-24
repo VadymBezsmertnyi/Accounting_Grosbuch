@@ -5,6 +5,7 @@ export const BODY_DEFAULT_DATE: TDefaultDate[] = [
   {
     id: 1,
     type: 'other',
+    href: 'aboutUs',
     imgMain: '',
     listDate: [
       {
@@ -22,6 +23,7 @@ export const BODY_DEFAULT_DATE: TDefaultDate[] = [
   {
     id: 2,
     type: 'list',
+    href: 'services',
     imgMain: legalBodyList,
     title: `Бухгалтерські послуги для юридичних осіб`,
     listDate: [

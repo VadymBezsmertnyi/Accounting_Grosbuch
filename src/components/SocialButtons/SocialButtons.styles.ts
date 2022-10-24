@@ -2,11 +2,11 @@ import { createAppTheme } from '../../theme/theme';
 const theme = createAppTheme();
 
 export const classes = {
-  socialButtonsContainer: {
+  socialButtonsContainer: (type: 'header' | 'footer') => ({
     display: 'flex',
     alignItems: 'center',
-    padding: '0 60px',
-  },
+    padding: type === 'header' ? '0 60px' : 0,
+  }),
   linkSocial: {
     display: 'flex',
     margin: '0 5px',

@@ -13,3 +13,5 @@ export { default as Contacts } from './Contacts';
 export { default as BodySite } from './BodySite';
 export { default as ItemBody } from './ItemBody';
 export { default as Feedback } from './Feedback';
+
+export { default as Footer } from './Footer';

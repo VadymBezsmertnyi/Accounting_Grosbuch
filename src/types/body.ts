@@ -21,6 +21,7 @@ export type TListDate = {
 export type TDefaultDate = {
   id: number | string;
   type: 'other' | 'list';
+  href?: string;
   imgMain: string;
   title?: string;
   listDate?: TListDate[];

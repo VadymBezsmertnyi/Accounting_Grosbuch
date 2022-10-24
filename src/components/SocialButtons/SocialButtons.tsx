@@ -8,9 +8,13 @@ import {
 
 import { classes } from './SocialButtons.styles';
 
-const SocialButtons = () => {
+interface ISocialButtonsProps {
+  type?: 'header' | 'footer';
+}
+
+const SocialButtons = ({ type = 'header' }: ISocialButtonsProps) => {
   return (
-    <Box sx={classes.socialButtonsContainer}>
+    <Box sx={classes.socialButtonsContainer(type)}>
       <Link
         target={'_blank'}
         style={classes.linkSocial}

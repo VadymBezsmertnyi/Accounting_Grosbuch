@@ -13,7 +13,10 @@ interface IItemBodyProps {
 
 const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
   return (
-    <Box sx={classes.itemList(lastElement, options.imgMain, options.type)}>
+    <Box
+      id={options.href}
+      sx={classes.itemList(lastElement, options.imgMain, options.type)}
+    >
       {options.type === 'other' && (
         <Box sx={classes.otherItem}>
           {options.listDate?.map((option, i) => {
@@ -41,7 +44,7 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
       )}
       {options.type === 'list' && (
         <Box sx={classes.listItem}>
-          <Typography variant="h2" sx={classes.titleListItem}>
+          <Typography variant="h3" sx={classes.titleListItem}>
             {options.title}
           </Typography>
           <Box sx={classes.elementsListItem}>

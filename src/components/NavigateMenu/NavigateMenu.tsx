@@ -6,9 +6,13 @@ import { LIST_NAVIGATE_MENU } from '../../constants/header';
 
 import { classes } from './NavigateMenu.styles';
 
-const NavigateMenu = () => {
+interface INavigateMenuProps {
+  type?: 'header' | 'footer';
+}
+
+const NavigateMenu = ({ type = 'header' }: INavigateMenuProps) => {
   return (
-    <Box sx={classes.navigateMenu}>
+    <Box sx={classes.navigateMenu(type)}>
       {LIST_NAVIGATE_MENU.map((menu) => (
         <Link
           key={`element_menu_${menu.id}`}

@@ -3,8 +3,9 @@ import { Box, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 
+import { Header, Footer } from '../';
+
 import { createAppTheme } from '../../theme/theme';
-import { Header } from '../';
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -26,7 +27,7 @@ const Layout = ({ children }: ILayoutProps) => {
             margin: '50px 0 0 0',
           }}
         >
-          <Typography>TEST FOOTER</Typography>
+          <Footer />
         </Box>
       </CssBaseline>
     </ThemeProvider>

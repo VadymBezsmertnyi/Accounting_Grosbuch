@@ -22,16 +22,16 @@ const InfoHeader = () => {
   return (
     <Box sx={classes.infoContainer}>
       <Box sx={classes.mainText}>
-        <Typography variant="h2" sx={classes.title}>
+        <Typography variant="h1" sx={classes.title}>
           {TITLE_INFO_HEADER}
         </Typography>
         <Box sx={classes.containerOtherTitle}>
           <Box sx={classes.otherTitleLine} />
-          <Typography variant="h1" sx={classes.otherTitle}>
+          <Typography variant="h2" sx={classes.otherTitle}>
             {OTHER_TITLE_INFO_HEADER_FIRST}
           </Typography>
         </Box>
-        <Typography variant="h1" sx={classes.otherTitle}>
+        <Typography variant="h2" sx={classes.otherTitle}>
           {OTHER_TITLE_INFO_HEADER_SECOND}
         </Typography>
         <CustomButton type={'header'} />

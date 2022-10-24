@@ -17,11 +17,10 @@ export const classes = {
     textDecoration: 'auto',
     fontFamily: 'Nunito',
     fontStyle: 'normal',
-    //fontWeight: 700,
-    //fontSize: '20px',
     lineHeight: '130%',
   },
   iconLink: {
     width: '24px',
+    marginRight: '5px',
   },
 };

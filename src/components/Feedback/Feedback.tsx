@@ -98,7 +98,12 @@ const Feedback = () => {
   };
 
   return (
-    <Box component={'form'} onSubmit={customSubmit} style={classes.feedback}>
+    <Box
+      id="feedback"
+      component={'form'}
+      onSubmit={customSubmit}
+      style={classes.feedback}
+    >
       <Box sx={classes.formInputs}>
         <FormControl
           required

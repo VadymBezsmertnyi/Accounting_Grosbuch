@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Box } from '@mui/material';
 
 import { classes } from './Contacts.styles';
@@ -11,10 +11,10 @@ import {
 } from '@mui/icons-material';
 
 interface IContactsProps {
-  type?: string;
+  type?: 'header' | 'footer';
 }
 
-const Contacts = ({ type = 'header' }) => {
+const Contacts = ({ type = 'header' }: IContactsProps) => {
   const addIcon = (typeContact: 'location' | 'phone' | 'email') => {
     switch (typeContact) {
       case 'location':
