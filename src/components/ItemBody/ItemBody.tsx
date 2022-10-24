@@ -29,6 +29,8 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
                     component={'img'}
                     src={option.imgLogo}
                     sx={classes.imgOtherItem(position)}
+                    title={`image ${option.title}`}
+                    alt={`image ${option.title}`}
                   />
                   {position === 'left' && <Box sx={classes.lineOtherItem} />}
                 </Box>
