@@ -1,4 +1,9 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useLayoutEffect,
+  useState,
+} from 'react';
 import { useFormik } from 'formik';
 import ReCAPTCHA from 'react-google-recaptcha';
 import {
@@ -58,6 +63,18 @@ const validate = (values: TFeedback) => {
 const Feedback = () => {
   const [showErrors, setShowErrors] = useState<TErrorsFeedback>({});
   const [showOtherError, setShowOtherError] = useState(false);
+  const isBrowser = typeof window !== 'undefined';
+  const [widthWindow, setWidthWindow] = useState(
+    isBrowser ? window.innerWidth : 900
+  );
+
+  useLayoutEffect(() => {
+    const handleResize = () => setWidthWindow(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
   const formik = useFormik({
     initialValues,
     validate,
@@ -102,9 +119,9 @@ const Feedback = () => {
       id="feedback"
       component={'form'}
       onSubmit={customSubmit}
-      style={classes.feedback}
+      sx={classes.feedback(widthWindow)}
     >
-      <Box sx={classes.formInputs}>
+      <Box sx={classes.formInputs(widthWindow)}>
         <FormControl
           required
           sx={{ width: '100%' }}
@@ -171,7 +188,7 @@ const Feedback = () => {
             {showErrors.recaptcha}
           </FormHelperText>
         </FormControl>
-        <CustomButton type="submit" />
+        {widthWindow > 680 && <CustomButton type="submit" />}
         <Typography sx={classes.otherErrorText(showOtherError)}>
           Будьласка заповніть форму
         </Typography>
@@ -179,12 +196,15 @@ const Feedback = () => {
           Ваші дані у повній безпеці і не будуть нікому передані
         </Typography>
       </Box>
-      <Box sx={classes.formCheckbox}>
+      <Box sx={classes.formCheckbox(widthWindow)}>
         <Box sx={classes.checkBoxesInputs}>
           <Typography sx={classes.titleCheckBoxesInputs}>
             {DEFAULT_FEEDBACK_CHECKBOXES.DEFAULT_CHECKBOXES_ACTIVITY.title}
           </Typography>
-          <FormControl error={Boolean(showErrors.activity)}>
+          <FormControl
+            sx={classes.formControlCheckbox(widthWindow)}
+            error={Boolean(showErrors.activity)}
+          >
             {DEFAULT_FEEDBACK_CHECKBOXES.DEFAULT_CHECKBOXES_ACTIVITY.checkboxes.map(
               (checkbox, i) => {
                 return (
@@ -221,7 +241,10 @@ const Feedback = () => {
                 .title
             }
           </Typography>
-          <FormControl error={Boolean(showErrors.taxationSystem)}>
+          <FormControl
+            sx={classes.formControlCheckbox(widthWindow)}
+            error={Boolean(showErrors.taxationSystem)}
+          >
             {DEFAULT_FEEDBACK_CHECKBOXES.DEFAULT_CHECKBOXES_TAXATION_SYSTEM.checkboxes.map(
               (checkbox, i) => {
                 return (
@@ -257,7 +280,10 @@ const Feedback = () => {
           <Typography sx={classes.titleCheckBoxesInputs}>
             {DEFAULT_FEEDBACK_CHECKBOXES.DEFAULT_CHECKBOXES_OWNERSHIP.title}
           </Typography>
-          <FormControl error={Boolean(showErrors.ownership)}>
+          <FormControl
+            sx={classes.formControlCheckbox(widthWindow)}
+            error={Boolean(showErrors.ownership)}
+          >
             {DEFAULT_FEEDBACK_CHECKBOXES.DEFAULT_CHECKBOXES_OWNERSHIP.checkboxes.map(
               (checkbox, i) => {
                 return (
@@ -288,6 +314,7 @@ const Feedback = () => {
             </FormHelperText>
           </FormControl>
         </Box>
+        {widthWindow <= 680 && <CustomButton type="submit" />}
       </Box>
     </Box>
   );

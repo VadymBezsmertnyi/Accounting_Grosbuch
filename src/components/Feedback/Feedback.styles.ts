@@ -4,25 +4,27 @@ import { feedbackImg } from '../../images';
 const theme = createAppTheme();
 
 export const classes = {
-  feedback: {
+  feedback: (widthWindow: number) => ({
     background: `url(${feedbackImg}) center center/cover no-repeat`,
     display: 'flex',
+    flexDirection: widthWindow > 680 ? 'row' : 'column',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    gap: '130px',
+    gap: widthWindow > 1100 ? '130px' : '20px',
+    padding: '10px',
     margin: '50px 0 0 0',
-  },
-  formInputs: {
+  }),
+  formInputs: (widthWindow: number) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     width: '472px',
-    height: '564px',
-    margin: '60px 0',
+    minHeight: '564px',
+    margin: widthWindow > 680 ? '60px 0' : '10px 0',
     background: 'rgba(35, 28, 38, 0.7)',
     borderRadius: '24px',
-  },
+  }),
   phoneInput: {
     width: '100%',
     padding: '0 46px',
@@ -38,18 +40,18 @@ export const classes = {
   },
   formHelperText: { textAlign: 'center', height: '30px' },
 
-  formCheckbox: {
+  formCheckbox: (widthWindow: number) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     gap: '0 120px',
-    width: '834px',
-    height: '564px',
-    margin: '60px 0',
+    maxWidth: '834px',
+    minHeight: '564px',
+    margin: widthWindow > 680 ? '60px 0' : '10px 0',
     background: 'rgba(35, 28, 38, 0.7)',
     borderRadius: '24px',
-    padding: '80px',
-  },
+    padding: widthWindow > 1100 ? '80px' : '20px',
+  }),
   checkBoxesInputs: {
     display: 'flex',
     flexDirection: 'column',
@@ -80,4 +82,7 @@ export const classes = {
     height: '30px',
   }),
   otherText: {},
+  formControlCheckbox: (widthWindow: number) => ({
+    flexDirection: widthWindow > 680 ? '' : 'row',
+  }),
 };
