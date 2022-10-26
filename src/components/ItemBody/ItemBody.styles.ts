@@ -4,20 +4,14 @@ const theme = createAppTheme();
 
 export const classes = {
   itemList: (
-    lastElement: boolean,
     imgElement: string,
-    type: 'other' | 'list'
+    type: 'other' | 'list',
+    widthWindow: number
   ) => ({
     background: `url(${imgElement}) center center/cover no-repeat`,
-    marginTop: type === 'list' ? '20px' : '100px',
+    marginTop: type === 'list' ? '20px' : widthWindow > 700 ? '100px' : '20px',
     width: '100%',
     minHeight: '500px',
-    clipPath:
-      type === 'list'
-        ? `polygon(0 0, 50% 15%, 100% 0, 100% ${
-            lastElement ? '100%' : '85%'
-          }, 50% 100%, 0 ${lastElement ? '100%' : '85%'})`
-        : '',
   }),
   otherItem: {
     width: '100%',
@@ -54,28 +48,28 @@ export const classes = {
     display: 'flex',
     justifyContent: positionElement === 'left' ? 'flex-start' : 'flex-end',
   }),
-  textOtherItem: {
-    width: '50%',
+  textOtherItem: (widthWindow: number) => ({
+    width: widthWindow > 700 ? '50%' : '80%',
     padding: '3vh 8vw',
-  },
+  }),
 
-  listItem: {
-    margin: '150px 0 130px 0',
+  listItem: (widthWindow: number) => ({
+    margin: widthWindow > 700 ? '150px 0 130px 0' : '150px 0 30px 0',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  },
-  titleListItem: {
-    fontSize: '40px',
-    margin: '0 0 150px 0',
-  },
+  }),
+  titleListItem: (widthWindow: number) => ({
+    fontSize: widthWindow > 700 ? '40px' : '20px',
+    margin: widthWindow > 700 ? '0 0 150px 0' : '0 0 15px 0',
+  }),
   elementsListItem: {
     display: 'flex',
     gap: '12px',
     justifyContent: 'center',
     flexWrap: 'wrap',
   },
-  elementListItem: {
+  elementListItem: (widthWindow: number) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -83,7 +77,8 @@ export const classes = {
     background: theme.palette.custom?.main.backgroundRaisinBlack70 || '',
     borderRadius: '25px',
     padding: '2px',
-  },
+    marginTop: widthWindow > 700 ? '' : '30px',
+  }),
   titleElementListItem: {
     background: theme.palette.custom?.main.backgroundRaisinBlack || '',
     borderRadius: '25px',

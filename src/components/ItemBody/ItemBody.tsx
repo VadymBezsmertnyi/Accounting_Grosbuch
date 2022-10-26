@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useLayoutEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import OutputIcon from '@mui/icons-material/Output';
 
@@ -8,14 +8,25 @@ import { classes } from './ItemBody.styles';
 
 interface IItemBodyProps {
   options: TDefaultDate;
-  lastElement: boolean;
 }
 
-const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
+const ItemBody = ({ options }: IItemBodyProps) => {
+  const isBrowser = typeof window !== 'undefined';
+  const [widthWindow, setWidthWindow] = useState(
+    isBrowser ? window.innerWidth : 900
+  );
+
+  useLayoutEffect(() => {
+    const handleResize = () => setWidthWindow(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
   return (
     <Box
       id={options.href}
-      sx={classes.itemList(lastElement, options.imgMain, options.type)}
+      sx={classes.itemList(options.imgMain, options.type, widthWindow)}
     >
       {options.type === 'other' && (
         <Box sx={classes.otherItem}>
@@ -35,7 +46,7 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
                   {position === 'left' && <Box sx={classes.lineOtherItem} />}
                 </Box>
                 <Box sx={classes.containerTextOtherItem(position)}>
-                  <Typography sx={classes.textOtherItem}>
+                  <Typography sx={classes.textOtherItem(widthWindow)}>
                     {option.text}
                   </Typography>
                 </Box>
@@ -45,8 +56,8 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
         </Box>
       )}
       {options.type === 'list' && (
-        <Box sx={classes.listItem}>
-          <Typography variant="h3" sx={classes.titleListItem}>
+        <Box sx={classes.listItem(widthWindow)}>
+          <Typography variant="h3" sx={classes.titleListItem(widthWindow)}>
             {options.title}
           </Typography>
           <Box sx={classes.elementsListItem}>
@@ -54,7 +65,7 @@ const ItemBody = ({ options, lastElement }: IItemBodyProps) => {
               return (
                 <Box
                   key={`container_list_item_${option.id}`}
-                  sx={classes.elementListItem}
+                  sx={classes.elementListItem(widthWindow)}
                 >
                   <Typography sx={classes.titleElementListItem}>
                     {option.title}
