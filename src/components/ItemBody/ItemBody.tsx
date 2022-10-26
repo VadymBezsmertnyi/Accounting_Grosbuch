@@ -17,11 +17,13 @@ const ItemBody = ({ options }: IItemBodyProps) => {
   );
 
   useLayoutEffect(() => {
-    const handleResize = () => setWidthWindow(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (isBrowser) {
+      const handleResize = () => setWidthWindow(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   });
   return (
     <Box

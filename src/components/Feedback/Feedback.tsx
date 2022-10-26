@@ -65,15 +65,17 @@ const Feedback = () => {
   const [showOtherError, setShowOtherError] = useState(false);
   const isBrowser = typeof window !== 'undefined';
   const [widthWindow, setWidthWindow] = useState(
-    isBrowser ? window.innerWidth : 900
+    isBrowser ? window.innerWidth : 1920
   );
 
   useLayoutEffect(() => {
-    const handleResize = () => setWidthWindow(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (isBrowser) {
+      const handleResize = () => setWidthWindow(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   });
   const formik = useFormik({
     initialValues,
