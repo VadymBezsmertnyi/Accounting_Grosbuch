@@ -3,30 +3,34 @@ import { createAppTheme } from '../../theme/theme';
 const theme = createAppTheme();
 
 export const classes = {
-  footer: {
+  footer: (widthWindow: number) => ({
     width: '100%',
     height: '250px',
     display: 'flex',
     alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    padding: '0 12vw 25px',
-  },
-  otherFooter: {
+    justifyContent: widthWindow > 1070 ? 'space-between' : 'center',
+    padding: widthWindow > 1070 ? '50px 12vw 25px' : '10px',
+    fontSize: widthWindow > 1070 ? '1rem' : '12px',
+    flexWrap: widthWindow > 1070 ? '' : 'wrap',
+  }),
+  otherFooter: (widthWindow: number) => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    maxWidth: '400px',
-  },
-  mainTextFooter: {
+    maxWidth: widthWindow > 1070 ? '400px' : '200px',
+  }),
+  mainTextFooter: (widthWindow: number) => ({
     fontFamily: 'Nunito',
     lineHeight: '130%',
-  },
-  otherTextFooter: {
+    fontSize: widthWindow > 1070 ? '1rem' : '12px',
+  }),
+  otherTextFooter: (widthWindow: number) => ({
     fontFamily: 'Nunito',
     color: theme.palette.custom?.main.coolGrey,
-  },
+    fontSize: widthWindow > 1070 ? '1rem' : '12px',
+  }),
   contactsFooter: {
     height: '100%',
     display: 'flex',

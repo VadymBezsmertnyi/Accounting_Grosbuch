@@ -23,12 +23,7 @@ const Layout = ({ children }: ILayoutProps) => {
           <Header />
         </Box>
         <Box component={'main'}>{children}</Box>
-        <Box
-          component={'footer'}
-          sx={{
-            margin: '50px 0 0 0',
-          }}
-        >
+        <Box component={'footer'}>
           <Footer />
         </Box>
       </CssBaseline>

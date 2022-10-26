@@ -19,7 +19,7 @@ export const classes = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '472px',
+    maxWidth: '472px',
     minHeight: '564px',
     margin: widthWindow > 680 ? '60px 0' : '10px 0',
     background: 'rgba(35, 28, 38, 0.7)',
@@ -50,7 +50,7 @@ export const classes = {
     margin: widthWindow > 680 ? '60px 0' : '10px 0',
     background: 'rgba(35, 28, 38, 0.7)',
     borderRadius: '24px',
-    padding: widthWindow > 1100 ? '80px' : '20px',
+    padding: widthWindow > 1350 ? '80px' : '10px',
   }),
   checkBoxesInputs: {
     display: 'flex',
@@ -81,8 +81,13 @@ export const classes = {
     marginTop: '3px',
     height: '30px',
   }),
-  otherText: {},
+  otherText: {
+    width: '80%',
+    textAlign: 'center',
+    fontSize: '12px',
+  },
   formControlCheckbox: (widthWindow: number) => ({
     flexDirection: widthWindow > 680 ? '' : 'row',
+    flexWrap: widthWindow > 680 ? '' : 'wrap',
   }),
 };

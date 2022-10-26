@@ -3,6 +3,7 @@ const theme = createAppTheme();
 
 export const classes = {
   navigateMenu: (type: 'header' | 'footer' | 'mobile') => ({
+    minWidth: '130px',
     height: type === 'footer' ? '100%' : 'auto',
     display: 'flex',
     alignItems: 'center',
