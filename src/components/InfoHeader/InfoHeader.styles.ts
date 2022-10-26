@@ -3,13 +3,13 @@ import { createAppTheme } from '../../theme/theme';
 const theme = createAppTheme();
 
 export const classes = {
-  infoContainer: {
+  infoContainer: (widthWindow: number) => ({
     display: 'flex',
     alignItems: 'flex-start',
     flexDirection: 'column',
     justifyContent: 'space-around',
-    padding: '178px 0 0',
-  },
+    paddingTop: widthWindow < 1020 ? '50px' : '178px',
+  }),
   mainText: {},
   title: {
     fontSize: '24px',
@@ -20,17 +20,17 @@ export const classes = {
     display: 'flex',
     alignItems: 'center',
   },
-  otherTitle: {
+  otherTitle: (widthWindow: number) => ({
     fontWeight: 700,
-    fontSize: '45px',
+    fontSize: widthWindow < 1020 ? '20px' : '45px',
     lineHeight: '130%',
-  },
-  otherTitleLine: {
-    width: '50px',
+  }),
+  otherTitleLine: (widthWindow: number) => ({
+    width: widthWindow < 1020 ? '20px' : '50px',
     height: '1px',
     margin: '0 10px',
     background: theme.palette.custom?.main.borderColor,
-  },
+  }),
   containerLink: {
     display: 'flex',
     alignItems: 'center',

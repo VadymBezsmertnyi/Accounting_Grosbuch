@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { Button } from '@mui/material';
 
@@ -10,7 +10,19 @@ interface ICustomButtonProps {
 }
 
 const CustomButton = ({ type, disabled = false }: ICustomButtonProps) => {
+  const isBrowser = typeof window !== 'undefined';
   const [hover, setHover] = useState(false);
+  const [widthWindow, setWidthWindow] = useState(
+    isBrowser ? window.innerWidth : 900
+  );
+
+  useLayoutEffect(() => {
+    const handleResize = () => setWidthWindow(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 
   return (
     <>
@@ -22,7 +34,7 @@ const CustomButton = ({ type, disabled = false }: ICustomButtonProps) => {
           onMouseLeave={() => {
             setHover(false);
           }}
-          sx={classes.containerLink(hover, type, disabled)}
+          sx={classes.containerLink(hover, type, disabled, widthWindow)}
           type="submit"
         >
           Залишити заявку
@@ -35,7 +47,7 @@ const CustomButton = ({ type, disabled = false }: ICustomButtonProps) => {
           onMouseLeave={() => {
             setHover(false);
           }}
-          style={classes.containerLink(hover, type, disabled)}
+          style={classes.containerLink(hover, type, disabled, widthWindow)}
           to={'#feedback'}
         >
           Залишити заявку

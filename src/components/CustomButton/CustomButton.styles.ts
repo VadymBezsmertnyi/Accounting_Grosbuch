@@ -6,14 +6,20 @@ export const classes = {
   containerLink: (
     hover: boolean,
     type: 'header' | 'other' | 'submit',
-    disabled: boolean
+    disabled: boolean,
+    widthWindow: number
   ) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: '251px',
     height: '66px',
-    margin: type === 'header' ? '70px 0 166px' : '',
+    margin:
+      type !== 'header'
+        ? ''
+        : widthWindow > 1020
+        ? '70px 0 166px'
+        : '20px 0 50px',
     borderRadius: '5% / 50%',
     fontSize: '20px',
     color: hover
