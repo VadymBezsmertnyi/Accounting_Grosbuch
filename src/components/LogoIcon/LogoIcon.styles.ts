@@ -12,6 +12,7 @@ export const classes = {
     height: '52px',
   },
   titleImg: {
+    width: '160px',
     fontFamily: 'Nunito',
     fontStyle: 'normal',
     fontWeight: 700,

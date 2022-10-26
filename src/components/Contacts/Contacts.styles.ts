@@ -11,6 +11,7 @@ export const classes = {
     justifyContent: 'space-around',
   },
   link: (hover?: boolean) => ({
+    width: '190px',
     display: 'flex',
     alignItems: 'center',
     color: hover

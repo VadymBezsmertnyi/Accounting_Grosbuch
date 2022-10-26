@@ -8,7 +8,7 @@ import { classes } from './NavigateMenu.styles';
 import { KeyObject } from 'crypto';
 
 interface INavigateMenuProps {
-  type?: 'header' | 'footer';
+  type?: 'header' | 'footer' | 'mobile';
 }
 
 const NavigateMenu = ({ type = 'header' }: INavigateMenuProps) => {

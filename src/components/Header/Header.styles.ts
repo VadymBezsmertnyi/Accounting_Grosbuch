@@ -14,9 +14,11 @@ export const classes = {
     justifyContent: 'space-between',
     padding: '0 20px',
   },
-  headerRight: {
+  headerRight: (widthWindow: number) => ({
+    width: widthWindow > 590 ? '100%' : '',
     display: 'flex',
-  },
+    justifyContent: 'space-around',
+  }),
   line: {
     width: '100%',
     height: '1px',

@@ -5,7 +5,7 @@ export const classes = {
   socialButtonsContainer: (type: 'header' | 'footer') => ({
     display: 'flex',
     alignItems: 'center',
-    padding: type === 'header' ? '0 60px' : 0,
+    //padding: type === 'header' ? '0 60px' : 0,
   }),
   linkSocial: {
     display: 'flex',

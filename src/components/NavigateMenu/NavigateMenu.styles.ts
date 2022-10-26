@@ -2,12 +2,13 @@ import { createAppTheme } from '../../theme/theme';
 const theme = createAppTheme();
 
 export const classes = {
-  navigateMenu: (type: 'header' | 'footer') => ({
+  navigateMenu: (type: 'header' | 'footer' | 'mobile') => ({
     height: type === 'footer' ? '100%' : 'auto',
     display: 'flex',
     alignItems: 'center',
-    flexDirection: type === 'footer' ? 'column' : '',
+    flexDirection: type !== 'header' ? 'column' : '',
     justifyContent: 'space-evenly',
+    flexWrap: 'wrap',
   }),
   menuButton: (hover?: boolean) => ({
     color: hover

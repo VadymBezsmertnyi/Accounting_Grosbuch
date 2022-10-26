@@ -12,7 +12,7 @@ const IndexPage = () => {
       const el = document.getElementById(hash.slice(1));
       setTimeout(() => el?.scrollIntoView({ behavior: 'smooth' }), 10);
     }
-  }, []);
+  });
 
   return (
     <Layout>
