@@ -69,13 +69,13 @@ const Feedback = () => {
   );
 
   useLayoutEffect(() => {
-    if (isBrowser) {
-      const handleResize = () => setWidthWindow(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    } else return () => false;
+    if (!isBrowser) return () => false;
+
+    const handleResize = () => setWidthWindow(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   });
   const formik = useFormik({
     initialValues,

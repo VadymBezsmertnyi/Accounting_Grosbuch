@@ -14,17 +14,17 @@ import { classes } from './Footer.styles';
 const Footer = () => {
   const isBrowser = typeof window !== 'undefined';
   const [widthWindow, setWidthWindow] = useState(
-    isBrowser ? window.innerWidth : 900
+    isBrowser ? window.innerWidth : 1900
   );
 
   useLayoutEffect(() => {
-    if (isBrowser) {
-      const handleResize = () => setWidthWindow(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    } else return () => false;
+    if (!isBrowser) return () => false;
+
+    const handleResize = () => setWidthWindow(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   });
 
   return (
