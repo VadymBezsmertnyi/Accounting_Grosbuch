@@ -23,7 +23,7 @@ const CustomButton = ({ type, disabled = false }: ICustomButtonProps) => {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
+    } else return () => false;
   });
 
   return (

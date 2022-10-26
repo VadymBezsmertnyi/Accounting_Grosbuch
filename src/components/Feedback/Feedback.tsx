@@ -75,7 +75,7 @@ const Feedback = () => {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
+    } else return () => false;
   });
   const formik = useFormik({
     initialValues,

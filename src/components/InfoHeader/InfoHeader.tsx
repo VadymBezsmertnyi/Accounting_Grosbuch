@@ -29,7 +29,7 @@ const InfoHeader = () => {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
+    } else return () => false;
   });
 
   return (

@@ -23,7 +23,7 @@ const ItemBody = ({ options }: IItemBodyProps) => {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
+    } else return () => false;
   });
   return (
     <Box

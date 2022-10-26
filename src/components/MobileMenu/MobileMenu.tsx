@@ -21,7 +21,7 @@ const MobileMenu = () => {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
+    } else return () => false;
   });
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
