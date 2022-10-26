@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react';
-import { Box, Button, Popper } from '@mui/material';
+import { Box, Button, ClickAwayListener, Popper } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 
 import { NavigateMenu, SocialButtons, Contacts } from '../';
@@ -36,11 +36,13 @@ const MobileMenu = () => {
         {open ? <CloseIcon /> : <MenuIcon />}
       </Button>
       <Popper id={'simple-popper'} open={open} anchorEl={anchorEl}>
-        <Box sx={classes.popperMobileMenu(widthWindow)}>
-          <NavigateMenu type="mobile" />
-          {widthWindow < 690 && <SocialButtons />}
-          {widthWindow < 590 && <Contacts />}
-        </Box>
+        <ClickAwayListener onClickAway={() => setAnchorEl(null)}>
+          <Box sx={classes.popperMobileMenu(widthWindow)}>
+            <NavigateMenu type="mobile" />
+            {widthWindow < 690 && <SocialButtons />}
+            {widthWindow < 590 && <Contacts />}
+          </Box>
+        </ClickAwayListener>
       </Popper>
     </Box>
   );
